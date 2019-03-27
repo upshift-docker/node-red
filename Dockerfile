@@ -2,9 +2,6 @@ FROM node:8-alpine
 
 LABEL maintainer="docker@upshift.fr"
 
-# Environment variable holding file path for flows configuration
-ENV FLOWS=flows.json
-ENV USERDIR=/data
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
 
 RUN set -eux; \
@@ -39,7 +36,7 @@ RUN set -eux; \
 
 USER node-red
 
-VOLUME $USERDIR
+VOLUME /data
 
 EXPOSE 1880
 
