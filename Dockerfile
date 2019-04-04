@@ -1,10 +1,10 @@
 FROM node:8-alpine
 
-LABEL maintainer="docker@upshift.fr"
+LABEL maintainer="docker-remove@upshift.fr"
 
 # Environment variable holding file path for flows configuration
-ENV FLOWS=flows.json
 ENV USERDIR=/data
+ENV FLOWS=flows.json
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
 
 RUN set -eux; \
