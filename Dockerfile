@@ -6,6 +6,7 @@ LABEL maintainer="docker-remove@upshift.fr"
 ENV USERDIR=/data
 ENV FLOWS=flows.json
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/node_modules
+ENV NODE_ENV=production
 
 RUN set -eux; \
 	# Home directory for application source code
@@ -23,14 +24,7 @@ RUN set -eux; \
 	apk add --no-cache \
 		iputils \
 	; \
-	apk add --no-cache --virtual .build-deps \
-		python \
-		make \
-		g++ \
-	; \
-	npm install \
-	; \
-	apk del .build-deps \
+	npm install --verbose --no-optional \
 	; \
 	# Add node-red user so we aren't running as root
 	adduser -h /usr/src/node-red -D -H node-red \
