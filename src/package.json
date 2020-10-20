@@ -1,6 +1,6 @@
 {
     "name": "node-red",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
     "license": "Apache-2.0",
@@ -13,7 +13,7 @@
         "start": "node $NODE_OPTIONS node_modules/node-red/red.js --userDir $USERDIR -v $FLOWS"
     },
     "dependencies": {
-        "node-red": "1.2.1",
+        "node-red": "1.2.2",
         "node-red-node-base64": "*",
         "node-red-node-data-generator": "*",
         "node-red-node-email": "*",
